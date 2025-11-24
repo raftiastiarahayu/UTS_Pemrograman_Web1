@@ -1,0 +1,15 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "Budi",
+      "phone": "08123456789",
+      "model": "Kemeja",
+      "deadline": "2025-01-10",
+      "size": {
+        "lingkar_dada": 90,
+        "lingkar_pinggang": 75
+      }
+    }
+  ]
+}

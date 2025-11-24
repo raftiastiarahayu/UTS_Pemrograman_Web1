@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Detail Layanan — TechnoFix</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-fade">
+<nav class="navbar navbar-dark px-3">
+  <a class="navbar-brand" href="index.html">TechnoFix</a>
+  <div class="nav-actions ms-auto"><button class="toggle-btn" onclick="toggleTheme()">🌙</button></div>
+</nav>
+
+<main class="container">
+  <div class="mt-3 reveal"><a href="index.html" class="btn btn-outline">← Kembali</a></div>
+
+  <section class="mt-3 page-section reveal">
+    <div class="form-card">
+      <h2 id="service-title">Detail Layanan</h2>
+      <p id="service-desc" style="color:var(--muted)">Memuat informasi...</p>
+
+      <div class="mt-3 info-row">
+        <div><strong>Durasi</strong><div style="color:var(--muted)">1–3 hari</div></div>
+        <div><strong>Garansi</strong><div style="color:var(--muted)">30 hari</div></div>
+        <div><strong>Estimasi Biaya</strong><div style="color:var(--muted)">Mulai Rp 100.000</div></div>
+      </div>
+
+      <div class="mt-3"><a href="mailto:service@technofix.id" class="btn btn-primary">Minta Penawaran</a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  @Copyright by 23552011392_Rafti Astia Rahayu_23 CNS B
+</footer>
+
+<script src="js/theme.js"></script>
+<script>
+(function(){
+  const params = new URLSearchParams(location.search);
+  const svc = params.get('service') || 'laptop';
+  const title = document.getElementById('service-title'), desc = document.getElementById('service-desc');
+  const map = {
+    laptop:{t:'Service Laptop', d:'Perbaikan hardware & software laptop: ganti layar/keyboard, perbaikan motherboard, instal ulang, upgrade RAM/SSD.'},
+    printer:{t:'Service Printer', d:'Servis printer inkjet & laser: pembersihan head, ganti sparepart, perbaikan mekanik & setup.'},
+    software:{t:'Install Software & Maintenance', d:'Instalasi OS, driver, aplikasi, backup & optimasi performa sistem.'}
+  };
+  const data = map[svc] || map.laptop;
+  title.textContent = data.t; desc.textContent = data.d;
+})();
+</script>
+<script src="js/ui.js"></script>
+</body>
+</html>
